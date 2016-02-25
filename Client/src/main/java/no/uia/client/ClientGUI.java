@@ -16,6 +16,8 @@ public class ClientGUI extends JFrame{
     public JTextField txtInput;
     public JLabel lblConnectedTo;
     public JLabel lblPing;
+    public JLabel lblMe;
+    public JButton btnConnectCentral;
 
 
     public ClientGUI(){

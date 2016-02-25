@@ -31,12 +31,14 @@ public class Server extends Thread implements Runnable {
     private static final Logger logger = LogManager.getLogger(Server.class);
 
     public Server(){
-        clientList = new ClientList();
-        clientList.setMaxClients(5);
-
         // Create Server GUI
         gui = new ServerGUI();
         gui.setVisible(true);
+
+        clientList = new ClientList(gui.getClientList());
+        clientList.setMaxClients(5);
+
+
     }
 
 
@@ -46,6 +48,7 @@ public class Server extends Thread implements Runnable {
         // Create new ServerSocket instance
         try {
             serverSocket = new ServerSocket();
+            serverSocket.setReuseAddress(true);
             serverSocket.bind(new InetSocketAddress("localhost", Server.PORT));
             logger.info("The server is listening on " + Server.PORT + ".");
 
@@ -60,7 +63,7 @@ public class Server extends Thread implements Runnable {
                 Client client = new Client(clientSocket, this);
                 client.start();
 
-                this.clientList.addClient(client, this.gui.getClientList());
+                this.clientList.addClient(client);
 
 
                 logger.info("New connection accepted!");

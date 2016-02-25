@@ -4,6 +4,8 @@
     <rowspec value="center:d:grow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
     <colspec value="fill:350px:grow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:d:grow"/>
@@ -33,7 +35,7 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Connect to %"/>
+          <text value="Connect to Per"/>
         </properties>
       </component>
       <grid id="9a408" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -46,11 +48,15 @@
         <children>
           <component id="83728" class="javax.swing.JTextField" binding="txtInput">
             <constraints border-constraint="South"/>
-            <properties/>
+            <properties>
+              <enabled value="false"/>
+            </properties>
           </component>
           <grid id="26720" layout-manager="FormLayout">
             <rowspec value="center:d:noGrow"/>
             <colspec value="fill:d:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
             <colspec value="left:4dlu:noGrow"/>
             <colspec value="fill:max(d;4px):noGrow"/>
             <constraints border-constraint="North"/>
@@ -73,6 +79,15 @@
                 </constraints>
                 <properties>
                   <text value="0ms"/>
+                </properties>
+              </component>
+              <component id="c5c93" class="javax.swing.JLabel" binding="lblMe">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="MYIP"/>
                 </properties>
               </component>
             </children>
@@ -100,7 +115,18 @@
           <forms/>
         </constraints>
         <properties>
+          <enabled value="false"/>
           <text value="Send"/>
+        </properties>
+      </component>
+      <component id="64591" class="javax.swing.JButton" binding="btnConnectCentral">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Connect to Central"/>
         </properties>
       </component>
     </children>
