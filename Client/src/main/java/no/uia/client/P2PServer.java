@@ -50,6 +50,8 @@ public class P2PServer extends Thread implements Runnable {
             while ((inputLine = in.readLine()) != null) {
                 //chatWindow.setText(chatWindow.getText() + "\n" + inputLine);
                 String[] answer = inputLine.split("=");
+
+
                 if (answer[0].equalsIgnoreCase("get:connect")) {
 
                     // Attempt to find host with specified port
@@ -72,9 +74,17 @@ public class P2PServer extends Thread implements Runnable {
                     chatWindow.setText(chatWindow.getText() + "\n" + "[SYSTEM]: Connected to central server at " + client.socket.getRemoteSocketAddress());
 
                     p2pSocket.close();
+                    System.out.println(":OOOO");
                     break;
 
 
+
+                }
+                else if(answer[0].equalsIgnoreCase("get:msg"))
+                {
+                    String[] split = answer[1].split(",");
+
+                    chatWindow.setText(chatWindow.getText() + "\n[" + split[0] + "]: " + split[1]);
 
                 }
             }

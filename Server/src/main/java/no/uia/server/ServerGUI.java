@@ -11,17 +11,19 @@ import java.net.URL;
 public class ServerGUI extends JFrame{
     private JList clientList;
     private JPanel rootPanel;
-    private JPanel imagePane;
     private JLabel serverAddress;
+    private JPanel panelBackground;
     private JLabel lblImage;
 
     public ServerGUI(){
         super("Per2Per Server");
-        setPreferredSize(new Dimension(700,400));
+        setPreferredSize(new Dimension(550,470));
         pack();
 
         setContentPane(rootPanel);
 
+        setResizable(false);
+        setAlwaysOnTop(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 

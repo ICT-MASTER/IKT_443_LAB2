@@ -4,9 +4,7 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:grow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <colspec value="fill:336px:grow"/>
+    <colspec value="fill:324px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:d:grow"/>
     <constraints>
@@ -38,26 +36,24 @@
           <text value="Server Address"/>
         </properties>
       </component>
-      <grid id="503a1" binding="imagePane" layout-manager="FormLayout">
-        <rowspec value="center:d:grow"/>
-        <colspec value="fill:d:grow"/>
+      <grid id="cff7d" binding="panelBackground" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
-      <component id="a1c40" class="javax.swing.JLabel" binding="lblImage">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <background color="-16777216"/>
         </properties>
-      </component>
+        <border type="none"/>
+        <children>
+          <component id="d12e2" class="javax.swing.JLabel" binding="lblImage">
+            <constraints/>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
     </children>
   </grid>
 </form>

@@ -91,8 +91,15 @@ public class Client extends Thread implements Runnable{
         DefaultListModel model = (DefaultListModel) gui.getClientList().getModel();
         int index = gui.getClientList().getSelectedIndex();
         model.clear();
-        for(String item : items.split(","))
-            model.addElement(item);
+        for(String item : items.split(",")){
+            String[] spl = item.split(":");
+            String port = spl[1];
+            String l_port = ""+socket.getLocalPort();
+
+            if(!port.equalsIgnoreCase(l_port))
+                model.addElement(item);
+        }
+
         gui.getClientList().setSelectedIndex(index);
     }
 
@@ -146,9 +153,14 @@ public class Client extends Thread implements Runnable{
                 // Retrieve text
                 String text = gui.txtInput.getText();
                 gui.txtInput.setText("");
+                String msg = socket.getLocalSocketAddress().toString().replace("/","")+","+text;
 
                 // Send to server
-                out.println(text);
+                out.println("get:msg="+msg);
+
+                // Append to local chat window
+                String[] split = msg.split(",");
+                gui.txtChat.setText(gui.txtChat.getText() + "\n[" + split[0] + "]: " + split[1]);
 
             }
         });
@@ -276,6 +288,7 @@ public class Client extends Thread implements Runnable{
                         gui.lblPing.setText("N/A");
                         gui.lblPing.setEnabled(false);
                     }
+
 
                     if (answer[0].equalsIgnoreCase("get:unhandled")) {
                         input_chat("Server: " + answer[1]);

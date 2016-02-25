@@ -23,6 +23,7 @@ public class ClientGUI extends JFrame{
     public ClientGUI(){
         super("Per2Per Client");
         setPreferredSize(new Dimension(700,400));
+        setAlwaysOnTop(true);
         pack();
 
         setContentPane(panel1);
