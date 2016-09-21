@@ -58,11 +58,9 @@ public class Server extends Thread implements Runnable {
             while (isRunning) {
 
                 Socket clientSocket = serverSocket.accept();
-
                 // Create new client instance and start the thread
                 Client client = new Client(clientSocket, this);
                 client.start();
-
                 this.clientList.addClient(client);
 
 
